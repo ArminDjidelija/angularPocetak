@@ -1,0 +1,46 @@
+<p>brendovi works!</p>
+<button (click)="getAllBrendovi()" style="margin-bottom: 10px;margin-top: 5px">Ucitaj brendove</button>
+
+<label style="margin-right: 5px">Dodaj novi brend: </label>
+<input [(ngModel)]="brend" type="text" style="width: 200px" >
+<button type="button" style="margin-left: 5px" (click)="sendData()" >Dodaj</button>
+<br>
+
+<div class="row">
+  <div class="col-12">
+    <table class="table table-bordered w-auto">
+      <thead>
+      <tr>
+        <td >Rb</td>
+        <td style="width: 150px">Naziv</td>
+        <td >Akcije</td>
+      </tr>
+
+      <tr *ngFor="let brend of brendovi;let i=index">
+        <td>{{i+1}}.</td>
+        <td>
+          <div *ngIf="brend.isEdit">
+            <input  type="text" [(ngModel)]="brend.naziv">
+          </div>
+          <div *ngIf="!brend.isEdit">
+            {{brend.naziv}}
+          </div>
+        </td>
+        <td>
+          <div *ngIf="!brend.isEdit">
+            <button (click)="modifikujBrend(brend)" class="btn btn-info" style="margin-right: 5px">Edit</button>
+            <button (click)="izbrisiBrend(brend)" class="btn btn-danger" >Delete</button>
+          </div>
+          <div *ngIf="brend.isEdit">
+            <button (click)="saveBrendModification(brend)" class="btn btn-info" style="margin-right: 5px">Save</button>
+            <button (click)="cancelModification(brend)" class="btn btn-danger" >Cancel</button>
+          </div>
+
+        </td>
+      </tr>
+
+      </thead>
+    </table>
+  </div>
+</div>
+

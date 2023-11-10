@@ -1,0 +1,31 @@
+<p>sedmica5 works!</p>
+
+<button (click)="getStudenti()">Get Studenti</button>
+
+<input [(ngModel)]="pretragaNaziv">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Ime</th>
+    <th>Prezime</th>
+    <th>Broj indeksa</th>
+    <th>Opština rođenja</th>
+    <th>Država</th>
+    <th>Datum rođenja</th>
+    <th>Created Time</th>
+    <th>Slika studenta</th>
+  </tr>
+  <tr *ngFor="let student of getFiltriraniStudenti()">
+    <td>{{ student.id }}</td>
+    <td>{{ student.ime }}</td>
+    <td>{{ student.prezime }}</td>
+    <td>{{ student.broj_indeksa }}</td>
+    <td>{{ student.opstina_rodjenja.description }}</td>
+    <td>{{ student.opstina_rodjenja.drzava.naziv }}</td>
+    <td>{{ student.datum_rodjenja | date}}</td>
+    <td>{{ student.created_time }}</td>
+    <td><img src="{{ student.slika_studenta }}" alt="Slika studenta" height="100"></td>
+  </tr>
+  </thead>
+</table>

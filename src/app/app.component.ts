@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularPocetak';
+  isVisibleSedmica4: boolean=false;
+  isVisibleSedmica5=false;
+  isVisibleProizvodi=false;
+  isVisibleBrendovi=false;
+  title: string = 'moj title';
+
+
 }

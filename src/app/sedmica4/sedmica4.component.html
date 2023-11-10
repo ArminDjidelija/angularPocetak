@@ -1,0 +1,29 @@
+<h3>Ovo je sedmica4 component</h3>
+<h1>Hello world!</h1>
+<div style="display: flex">
+  <label style="float: left;">Ime: </label>
+  <label style="float: left">{{ime}}</label>
+</div>
+
+<input value="{{ime}}" style="margin-right: 5px" (input)="izmjenaImena($event)">
+<br>
+<input  [(ngModel)]="ime">
+<br>
+<button style="margin-right: 5px; margin-top: 10px" (click)="testirajDugme1()">Klikni me</button>
+<button (click)="resetuj()">Resetuj</button>
+<label id="prezime" ></label>
+
+<div *ngIf="isVisible()" style="margin-top: 5px"
+     [ngStyle]="changeCss()">
+  {{ime}}
+</div>
+<br>
+<div style="border: 1px solid black; margin-bottom: 5px;margin-top: 1px;width: 20%" *ngFor="let x of imena">
+  {{x}}
+</div>
+Novo ime <br>
+<input [(ngModel)]="novoIme">
+<br>
+<button (click)="dodajNovoIme()">Dodaj novo ime</button>
+<br>
+<button (click)="ukloniZadnjeIme()">Ukloni zadnje ime</button>

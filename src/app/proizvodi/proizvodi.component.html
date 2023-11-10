@@ -1,0 +1,26 @@
+<p>proizvodi works!</p>
+
+<button (click)="getAllProizvodi()">generate</button>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th >Naziv</th>
+    <th>Cijena</th>
+    <th>Broj klikova</th>
+    <th>Brend</th>
+    <th>Potkategorija</th>
+
+  </tr>
+
+  <tr *ngFor="let proizvod of proizvodi">
+    <th>{{proizvod.id}}</th>
+    <th>{{proizvod.naziv}}</th>
+    <th>{{proizvod.pocetnaCijena}}</th>
+    <th>{{proizvod.brojKlikova}}</th>
+    <th>{{proizvod.brendNaziv}}</th>
+    <th>{{proizvod.potkategorijaNaziv}}</th>
+  </tr>
+  </thead>
+</table>
